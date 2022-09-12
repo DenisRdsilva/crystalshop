@@ -148,9 +148,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
   double swidth = MediaQuery.of(context).size.width;
   double sheight = MediaQuery.of(context).size.height;
+  double val = 0;
+  if (swidth>600)[val = 0.5];
+  if (swidth<=600)[val = 0.85];
   return Scaffold(
     key: scaffoldkey,
-    drawer: Drawer(backgroundColor: Colors.amber, width: swidth*0.5,
+    drawer: Drawer(backgroundColor: Colors.amber, width: swidth*val,
       child: Container(margin: EdgeInsets.all(50), child: Column(children: [
         Container(width: 300, height: 70, alignment: Alignment.center, color: Colors.red,
           child: Row( crossAxisAlignment: CrossAxisAlignment.center, children: [

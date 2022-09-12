@@ -149,8 +149,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   double swidth = MediaQuery.of(context).size.width;
   double sheight = MediaQuery.of(context).size.height;
   double val = 0;
-  if (swidth>600)[val = 0.5];
-  if (swidth<=600)[val = 0.85];
+  double larg = 0;
+  double font = 0;
+  if (swidth>600)[val = 0.5, larg = 240, font = 20];
+  if (swidth<=600)[val = 0.9, larg = 40, font = 16];
   return Scaffold(
     key: scaffoldkey,
     drawer: Drawer(backgroundColor: Colors.amber, width: swidth*val,
@@ -163,15 +165,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             Spacer()
           ])),
         if(_counter == 0)...[
-          Container(width: swidth*0.5, height: 30, alignment: Alignment.center, margin: EdgeInsets.only(top: 60), child: 
-            Text('Your Shopping Cart is Empty', style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black))),
+          Container(width: swidth, height: 30, alignment: Alignment.center, margin: EdgeInsets.only(top: 60), child: 
+            Text('Your Shopping Cart is Empty', style: GoogleFonts.raleway(fontSize: font, fontWeight: FontWeight.bold, color: Colors.black))),
         ]else...[
-          Container(width: swidth*0.5, height: 30, alignment: Alignment.center, margin: EdgeInsets.only(top: 60), child:
-            Text('You selected these products:', style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black))),
+          Container(width: swidth, height: 30, alignment: Alignment.center, margin: EdgeInsets.only(top: 60), child:
+            Text('You selected these products:', style: GoogleFonts.raleway(fontSize: font, fontWeight: FontWeight.bold, color: Colors.black))),
           if(_counter1 > 0)...[
             Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(width: (swidth/2)-240, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 40), alignment: Alignment.center,
-                child: Text(lista[0], style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold))),
+              Container(width: (swidth/2)-larg, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 40), alignment: Alignment.center,
+                child: Text(lista[0], style: GoogleFonts.raleway(fontSize: font-4, fontWeight: FontWeight.bold))),
               Container(width: 30, height: 30, decoration: BoxDecoration(border: Border(right: BorderSide(), top: BorderSide(), bottom: BorderSide()), color: Colors.white), margin: EdgeInsets.only(top: 40), child: 
                 TextButton(onPressed: incrementCounter1, child: 
                   Icon(FontAwesomeIcons.plus, size: 15, color: Colors.black))),
@@ -184,8 +186,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ],
           if(_counter2 > 0)...[
             Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(width: (swidth/2)-240, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
-                child: Text(lista[1], style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold))),
+              Container(width: (swidth/2)-larg, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
+                child: Text(lista[1], style: GoogleFonts.raleway(fontSize: font-4, fontWeight: FontWeight.bold))),
               Container(width: 30, height: 30, decoration: BoxDecoration(border: Border(right: BorderSide(), top: BorderSide(), bottom: BorderSide()), color: Colors.white), margin: EdgeInsets.only(top: 10), child: 
                 TextButton(onPressed: incrementCounter2, child: 
                   Icon(FontAwesomeIcons.plus, size: 15, color: Colors.black))),
@@ -198,8 +200,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ],
           if(_counter3 > 0)...[
             Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(width: (swidth/2)-240, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
-                child: Text(lista[2], style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold))),
+              Container(width: (swidth/2)-larg, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
+                child: Text(lista[2], style: GoogleFonts.raleway(fontSize: font-4, fontWeight: FontWeight.bold))),
               Container(width: 30, height: 30, decoration: BoxDecoration(border: Border(right: BorderSide(), top: BorderSide(), bottom: BorderSide()), color: Colors.white), margin: EdgeInsets.only(top: 10), child: 
                 TextButton(onPressed: incrementCounter3, child: 
                   Icon(FontAwesomeIcons.plus, size: 15, color: Colors.black))),
@@ -212,8 +214,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ],
           if(_counter4 > 0)...[
             Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(width: (swidth/2)-240, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
-                child: Text(lista[3], style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold))),
+              Container(width: (swidth/2)-larg, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
+                child: Text(lista[3], style: GoogleFonts.raleway(fontSize: font-4, fontWeight: FontWeight.bold))),
               Container(width: 30, height: 30, decoration: BoxDecoration(border: Border(right: BorderSide(), top: BorderSide(), bottom: BorderSide()), color: Colors.white), margin: EdgeInsets.only(top: 10), child: 
                 TextButton(onPressed: incrementCounter4, child: 
                   Icon(FontAwesomeIcons.plus, size: 15, color: Colors.black))),
@@ -226,8 +228,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ],
           if(_counter5 > 0)...[
             Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(width: (swidth/2)-240, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
-                child: Text(lista[4], style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold))),
+              Container(width: (swidth/2)-larg, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
+                child: Text(lista[4], style: GoogleFonts.raleway(fontSize: font-4, fontWeight: FontWeight.bold))),
               Container(width: 30, height: 30, decoration: BoxDecoration(border: Border(right: BorderSide(), top: BorderSide(), bottom: BorderSide()), color: Colors.white), margin: EdgeInsets.only(top: 10), child: 
                 TextButton(onPressed: incrementCounter5, child: 
                   Icon(FontAwesomeIcons.plus, size: 15, color: Colors.black))),
@@ -240,8 +242,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ],
           if(_counter6 > 0)...[
             Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(width: (swidth/2)-240, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
-                child: Text(lista[5], style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold))),
+              Container(width: (swidth/2)-larg, height: 30, decoration: BoxDecoration(border: Border.all(), color: Colors.amberAccent), margin: EdgeInsets.only(left: 20, top: 10), alignment: Alignment.center,
+                child: Text(lista[5], style: GoogleFonts.raleway(fontSize: font-4, fontWeight: FontWeight.bold))),
               Container(width: 30, height: 30, decoration: BoxDecoration(border: Border(right: BorderSide(), top: BorderSide(), bottom: BorderSide()), color: Colors.white), margin: EdgeInsets.only(top: 10), child: 
                 TextButton(onPressed: incrementCounter6, child: 
                   Icon(FontAwesomeIcons.plus, size: 15, color: Colors.black))),
@@ -252,8 +254,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 Text('$_counter6', style: GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold)))
             ])
           ],
-          Container(width: swidth*0.5, height: 30, alignment: Alignment.center, margin: EdgeInsets.only(top: 40), child:
-            Text('Total of $_counter product(s) in your bag', style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black))),
+          Container(width: swidth, height: 30, alignment: Alignment.center, margin: EdgeInsets.only(top: 40), child:
+            Text('Total of $_counter product(s) in your bag', style: GoogleFonts.raleway(fontSize: font, fontWeight: FontWeight.bold, color: Colors.black))),
         ]
       ])
     )),
@@ -375,15 +377,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ])),
       ]else...[
          Row(children: [
-            Container(width: swidth*0.9, height: 70, color: Colors.amberAccent, alignment: Alignment.center, padding: EdgeInsets.only(left: swidth*0.06), child: 
-              Text('Crystal Online Shop', style: GoogleFonts.raleway(color: Colors.red, fontWeight: FontWeight.w500, fontSize: 35))),
-            Container(width: swidth*0.1, height: 70, color: Colors.redAccent, child: TextButton(onPressed: () => scaffoldkey.currentState?.openDrawer(),
+            Container(width: swidth*0.85, height: 70, color: Colors.amberAccent, alignment: Alignment.center, child: 
+              Text('Crystal Online Shop', style: GoogleFonts.raleway(color: Colors.red, fontWeight: FontWeight.w500, fontSize: 30))),
+            Container(width: swidth*0.15, height: 70, color: Colors.redAccent, child: TextButton(onPressed: () => scaffoldkey.currentState?.openDrawer(),
               child: Icon(Icons.shop, size: 30, color: Colors.white)))
             ]),
           Row(children: [
-            Container(width: swidth*0.9, height: 50, color: Colors.amber, alignment: Alignment.center, padding: EdgeInsets.only(left: swidth*0.06), child: 
-              Text('The best prices for your pocket', style: GoogleFonts.raleway(color: Colors.red, fontWeight: FontWeight.w500, fontSize: 26))),
-            Container(width: swidth*0.1, height: 50, alignment: Alignment.center, color: Colors.white, child: 
+            Container(width: swidth*0.85, height: 50, color: Colors.amber, alignment: Alignment.center, child: 
+              Text('The best prices for your pocket', style: GoogleFonts.raleway(color: Colors.red, fontWeight: FontWeight.w500, fontSize: 20))),
+            Container(width: swidth*0.15, height: 50, alignment: Alignment.center, color: Colors.white, child: 
             Text('$_counter', style: Theme.of(context).textTheme.headline5))
             ]),
           Container(height: 2, color: Colors.black),
@@ -391,7 +393,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           Column(children: [
               Container(width: 40),
               Container(width: swidth*0.8, height: 30, color: Colors.amber, alignment: Alignment.centerLeft, padding: EdgeInsets.only(left: swidth*0.01), child: Text(lista[0], style: GoogleFonts.raleway(fontWeight: FontWeight.bold))),
-              Container(width: swidth*0.8, height: 300, child: Image.asset(imagens[0], fit: BoxFit.cover)),
+              Container(width: swidth*0.8, height: 300, child: Image.asset(imagens[5], fit: BoxFit.cover)),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [Container(width: swidth*0.7, height: 60, color: Colors.amberAccent, padding: EdgeInsets.all(swidth*0.01), child:
                 Text('Each package have multiple garnets, they can be red or green. Which color is your favourite?', style: TextStyle(fontSize: 15))),
                 Column(children: [Container(width: swidth*0.1, height: 35, color: Colors.red, child: TextButton(onPressed: incrementCounter1, child: Icon(FontAwesomeIcons.plus, size: 15, color: Colors.white))),
@@ -456,7 +458,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             Column(children: [
               Container(width: 40),
               Container(width: swidth*0.8, height: 30, color: Colors.amber, alignment: Alignment.centerLeft, padding: EdgeInsets.only(left: swidth*0.01), child: Text(lista[5], style: GoogleFonts.raleway(fontWeight: FontWeight.bold))),
-              Container(width: swidth*0.8, height: 300, child: Image.asset(imagens[5], fit: BoxFit.cover)),
+              Container(width: swidth*0.8, height: 300, child: Image.asset(imagens[0], fit: BoxFit.cover)),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [Container(width: swidth*0.7, height: 60, color: Colors.amberAccent, padding: EdgeInsets.all(swidth*0.01), child: 
                 Text('Colorful Fluorites with banded alternation of green and purple, absolutely stunning.', style: TextStyle(fontSize: 15))),
                 Column(children: [Container(width: swidth*0.1, height: 35, color: Colors.red, child: TextButton(onPressed: incrementCounter6, child: Icon(FontAwesomeIcons.plus, size: 15, color: Colors.white))),
@@ -470,7 +472,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Container(height: 60, color: Colors.amber, child:
           Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
             Text('Crystal Online Shop', style: TextStyle(fontWeight: FontWeight.w500)),
-            Text('© 2022 Designed by Dênis Silva', style: TextStyle(fontWeight: FontWeight.w500))
+            Text('© 2022 Designed by DSilva', style: TextStyle(fontWeight: FontWeight.w500))
         ])),
       ]
     ])

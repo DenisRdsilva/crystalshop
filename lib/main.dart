@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
+      title: "Crystal Shop",
       theme: ThemeData(
           useMaterial3: true,
           cardTheme: CardTheme(

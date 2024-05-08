@@ -70,7 +70,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         key: scaffoldkey,
         drawer: Drawer(
-            backgroundColor: Colors.amber,
             width: swidth * val,
             child: DrawerContent(
                 swidth: swidth,
@@ -82,9 +81,9 @@ class _HomePageState extends State<HomePage> {
             physics: const BouncingScrollPhysics(),
             controller: _firstController,
             child: Container(
-                color: const Color.fromARGB(255, 220, 220, 1155),
                 height: sheight,
                 width: swidth,
+                color: Color(0xFFF0F0F0),
                 child: ListView(children: [
                   if (swidth > 767) ...[
                     HomeDesktop(

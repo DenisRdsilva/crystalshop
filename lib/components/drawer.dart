@@ -31,13 +31,13 @@ class _DrawerContentState extends State<DrawerContent> {
     if (widget.swidth > 600) [val = 0.5, larg = 240, font = 20];
     if (widget.swidth <= 600) [val = 0.9, larg = 40, font = 16];
     return Container(
+      color: const Color(0xFFE0F2FE),
         padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         child: Column(children: [
           Container(
               width: 300,
               height: 70,
               alignment: Alignment.center,
-              color: Colors.red,
               child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -76,8 +76,6 @@ class _DrawerContentState extends State<DrawerContent> {
                     Container(
                         width: (widget.swidth / 2.5) - larg,
                         height: 45,
-                        decoration: BoxDecoration(
-                            border: Border.all(), color: Colors.amberAccent),
                         margin: const EdgeInsets.only(left: 20, top: 40),
                         alignment: Alignment.center,
                         child: Text(lista[i],
@@ -94,10 +92,11 @@ class _DrawerContentState extends State<DrawerContent> {
                                 bottom: BorderSide()),
                             color: Colors.white),
                         margin: const EdgeInsets.only(top: 40),
-                        child: InkWell(
+                        child: Material(
+                                child: InkWell(
                             onTap: () => widget.incrementCounter(i),
                             child: const Icon(FontAwesomeIcons.plus,
-                                size: 15, color: Colors.black))),
+                                size: 15, color: Colors.black)))),
                     Container(
                         width: 40,
                         height: 45,
@@ -116,12 +115,13 @@ class _DrawerContentState extends State<DrawerContent> {
                                 Border(top: BorderSide(), bottom: BorderSide()),
                             color: Colors.white),
                         margin: const EdgeInsets.only(top: 40),
-                        child: InkWell(
+                        child: Material(
+                                child: InkWell(
                             onTap: () {
                               widget.decrementCounter(i);
                             },
                             child: const Icon(FontAwesomeIcons.minus,
-                                size: 15, color: Colors.black))),
+                                size: 15, color: Colors.black)))),
                   ]),
                 )
               }

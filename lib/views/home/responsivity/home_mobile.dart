@@ -33,32 +33,28 @@ class _HomeMobileState extends State<HomeMobile> {
           Container(
               width: widget.swidth * 0.85,
               height: 70,
-              color: Colors.amberAccent,
+              color: const Color(0xFFE0F2FE),
               alignment: Alignment.center,
               child: Text('Crystal Online Shop',
                   style: GoogleFonts.raleway(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30))),
-          Container(
+                      fontWeight: FontWeight.w500, fontSize: 30))),
+          SizedBox(
               width: widget.swidth * 0.15,
               height: 70,
-              color: Colors.redAccent,
-              child: InkWell(
+              child: Material(
+                                child: InkWell(
                   onTap: () => widget.scaffoldkey.currentState?.openDrawer(),
-                  child: const Icon(Icons.shop, size: 30, color: Colors.white)))
+                  child: const Icon(Icons.shop, size: 30, color: Colors.white))))
         ]),
         Row(children: [
           Container(
               width: widget.swidth * 0.85,
               height: 50,
-              color: Colors.amber,
+              color: Color(0xFFF5F5F5),
               alignment: Alignment.center,
               child: Text('The best prices for your pocket',
                   style: GoogleFonts.raleway(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20))),
+                      fontWeight: FontWeight.w500, fontSize: 20))),
           Container(
               width: widget.swidth * 0.15,
               height: 50,
@@ -71,63 +67,63 @@ class _HomeMobileState extends State<HomeMobile> {
         Container(height: 50),
         Wrap(runSpacing: 15, spacing: 15, children: [
           for (var i = 0; i < lista.length; i++) ...{
-            Container(
+            SizedBox(
               width: 300,
-              child: Column(
-                children: [
-                  Container(
-                      height: 30,
-                      color: Colors.amber,
-                      alignment: Alignment.centerLeft,
-                      padding: EdgeInsets.only(left: widget.swidth * 0.01),
-                      child: Text(lista[i],
-                          style: GoogleFonts.raleway(
-                              fontWeight: FontWeight.bold))),
-                  SizedBox(
-                      width: 300,
-                      height: 300,
-                      child: Image.asset(imagens[i], fit: BoxFit.cover)),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              child: Card(
+                child: Column(
+                  children: [
                     Container(
-                        width: 250,
-                        height: 100,
-                        color: Colors.amberAccent,
-                        padding: EdgeInsets.all(widget.swidth * 0.01),
-                        child: Text(description[i],
-                            style: const TextStyle(fontSize: 15))),
+                        height: 30,
+                        alignment: Alignment.centerLeft,
+                        padding: EdgeInsets.only(left: widget.swidth * 0.01),
+                        child: Text(lista[i],
+                            style: GoogleFonts.raleway(
+                                fontWeight: FontWeight.bold))),
                     SizedBox(
-                      width: 50,
-                      child: Column(children: [
-                        Container(
-                            height: 30,
-                            width: double.maxFinite,
-                            color: Colors.red,
-                            child: InkWell(
-                                onTap: () => widget.incrementCounter(i),
-                                child: const Icon(FontAwesomeIcons.plus,
-                                    size: 15, color: Colors.white))),
-                        Container(
-                            height: 40,
-                            alignment: Alignment.center,
-                            color: Colors.white,
-                            child: Text('${quantity[i]}',
-                                style: const TextStyle(fontSize: 16))),
-                        Container(
-                            height: 30,
-                            width: double.maxFinite,
-                            color: Colors.red,
-                            child: InkWell(
-                                onTap: () {
-                                  if (quantity[i] > 0) {
-                                    widget.decrementCounter(i);
-                                  }
-                                },
-                                child: const Icon(FontAwesomeIcons.minus,
-                                    size: 15, color: Colors.white))),
-                      ]),
-                    )
-                  ]),
-                ],
+                        width: 300,
+                        height: 300,
+                        child: Image.asset(imagens[i], fit: BoxFit.cover)),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Container(
+                          width: 250,
+                          height: 100,
+                          padding: EdgeInsets.all(widget.swidth * 0.01),
+                          child: Text(description[i],
+                              style: const TextStyle(fontSize: 15))),
+                      SizedBox(
+                        width: 42,
+                        child: Column(children: [
+                          SizedBox(
+                              height: 30,
+                              width: double.maxFinite,
+                              child: Material(
+                                child: InkWell(
+                                    onTap: () => widget.incrementCounter(i),
+                                    child: const Icon(FontAwesomeIcons.plus,
+                                        size: 15, color: Colors.white)))),
+                          Container(
+                              height: 40,
+                              alignment: Alignment.center,
+                              color: Colors.white,
+                              child: Text('${quantity[i]}',
+                                  style: const TextStyle(fontSize: 16))),
+                          SizedBox(
+                              height: 30,
+                              width: double.maxFinite,
+                              child: Material(
+                                child: InkWell(
+                                  onTap: () {
+                                    if (quantity[i] > 0) {
+                                      widget.decrementCounter(i);
+                                    }
+                                  },
+                                  child: const Icon(FontAwesomeIcons.minus,
+                                      size: 15, color: Colors.white)))),
+                        ]),
+                      )
+                    ]),
+                  ],
+                ),
               ),
             )
           }
@@ -136,8 +132,8 @@ class _HomeMobileState extends State<HomeMobile> {
         Container(height: 2, color: Colors.black),
         Container(
             width: widget.swidth,
+            color: const Color(0xFFE0F2FE),
             height: 60,
-            color: Colors.amber,
             child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
